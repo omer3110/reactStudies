@@ -23,22 +23,25 @@ const AddTodoForm = ({ addTodo, setSnackbarMessage, setSnackbarColor, setSnackba
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <TextField sx={{ width: '30vw' }}
-                type="text"
-                inputRef={inputRef} // Assign the ref to the input element
-                placeholder="Enter your todo"
-            />
-            {/* <input
+        <>
+            <form onSubmit={handleSubmit}>
+                <TextField sx={{ width: '30vw' }}
+                    type="text"
+                    inputRef={inputRef}
+                    placeholder="Enter your todo"
+                />
+                {/* <input
                 type="text"
                 ref={inputRef} // Assign the ref to the input element
                 placeholder="Enter your todo"
             /> */}
-            <Tooltip title="Add Todo" placement="top" >
-                <Button type='submit' variant="contained"><AddIcon /></Button>
-            </Tooltip >
-            {/* <button>Add Todo</button> */}
-        </form>
+                <Tooltip title="Add Todo" placement="top" >
+                    <Button type='submit' variant="contained"><AddIcon /></Button>
+                </Tooltip >
+                {/* <button>Add Todo</button> */}
+            </form>
+            <button to="/new"> add</button>
+        </>
     );
 };
 

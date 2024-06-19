@@ -1,24 +1,31 @@
 {
   "todos": [
     {
-      "id": "9",
-      "title": "Optimize Performance",
-      "isComplete": false
-    },
-    {
       "id": "10",
       "title": "Deploy to Production",
-      "isComplete": false
+      "isComplete": true,
+      "isExpanded": false
     },
     {
       "id": "WYNDP",
       "title": "Practice",
-      "isComplete": true
+      "isComplete": true,
+      "isExpanded": false
     },
     {
-      "id": "tMdJP",
-      "title": "wre",
-      "isComplete": true
+      "id": "MUIOo",
+      "title": "Omer",
+      "isComplete": false
+    },
+    {
+      "id": "ed4c",
+      "title": "as",
+      "isComplete": false
+    },
+    {
+      "id": "0d2e",
+      "title": "Todo",
+      "isComplete": false
     }
   ]
 }

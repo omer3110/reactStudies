@@ -1,29 +1,23 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
+import { NavLink } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
-const navItems = ['Home', 'About', 'Todo', 'Activity'];
+const navItems = [
+    { name: 'Home', path: '/' },
+    { name: 'Todo', path: '/todo' }
+];
 
-function DrawerAppBar(props) {
+function Navbar() {
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex', marginBottom: '20px' }}>
             <CssBaseline />
             <AppBar component="nav">
                 <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        edge="start"
-                        sx={{ mr: 2, display: { sm: 'none' } }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
                     <Typography
                         variant="h6"
                         component="div"
@@ -33,20 +27,23 @@ function DrawerAppBar(props) {
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
-                            <Button key={item} sx={{ color: '#fff' }}>
-                                {item}
-                            </Button>
+                            <NavLink
+                                key={item.name}
+                                to={item.path}
+                                style={({ isActive }) => ({
+                                    color: isActive ? 'black' : '#fff',
+                                    textDecoration: 'none',
+                                    padding: '10px 20px'
+                                })}
+                            >
+                                {item.name}
+                            </NavLink>
                         ))}
                     </Box>
                 </Toolbar>
             </AppBar>
-            <Box component="main" sx={{ p: 3 }}>
-                <Toolbar />
-            </Box>
         </Box>
     );
 }
 
-
-
-export default DrawerAppBar;
+export default Navbar;
